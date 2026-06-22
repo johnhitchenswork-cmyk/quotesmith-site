@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuoteSmith | Win More Work With Quotes That Look the Part</title>
+<meta name="description" content="QuoteSmith turns your job details into a branded, professional PDF quote in about two minutes. Built for UK builders, plumbers, electricians and every trade. GBP 19.99 per month, cancel anytime.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://quotesmith.co.uk/">
+<style>
+  :root{
+    --gold:#f0b429; --gold-soft:rgba(240,180,41,.55);
+    --bg:#0f0e0c; --surface:#171511; --surface-2:#1d1a14;
+    --text:#f3efe6; --muted:#b9b1a0; --line:rgba(240,180,41,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  a{color:inherit}
+  .btn{
+    display:inline-block;background:var(--gold);color:#171008;font-weight:800;
+    padding:16px 30px;border-radius:12px;text-decoration:none;font-size:1.05rem;
+    letter-spacing:.2px;transition:transform .25s ease,box-shadow .25s ease;
+    box-shadow:0 14px 34px rgba(240,180,41,.28);
+  }
+  .btn:hover{transform:translateY(-3px);box-shadow:0 20px 46px rgba(240,180,41,.4)}
+  .btn-ghost{
+    display:inline-block;border:1px solid var(--gold-soft);color:var(--gold);
+    padding:15px 28px;border-radius:12px;text-decoration:none;font-weight:700;
+    transition:background .25s ease,transform .25s ease;
+  }
+  .btn-ghost:hover{background:rgba(240,180,41,.08);transform:translateY(-2px)}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:1.6px;
+    text-transform:uppercase;color:var(--gold);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  /* disclosure */
+  .disclosure{
+    background:var(--surface);border-bottom:1px solid var(--line);
+    color:var(--muted);font-size:.82rem;text-align:center;padding:9px 16px;
+  }
+  /* hero */
+  header.hero{
+    padding:64px 0 70px;text-align:center;
+    background:radial-gradient(900px 480px at 50% -8%,rgba(240,180,41,.10),transparent 60%);
+  }
+  .hero h1{
+    font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.12;font-weight:800;
+    letter-spacing:-.5px;margin-bottom:20px;
+  }
+  .hero h1 .hl{color:var(--gold)}
+  .hero p.sub{font-size:clamp(1.05rem,2.3vw,1.3rem);color:var(--muted);max-width:680px;margin:0 auto 32px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .price-line{margin-top:20px;color:var(--muted);font-size:.95rem}
+  .price-line strong{color:var(--text)}
+  /* trust bar */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+  .trust .wrap{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:center;padding:20px 22px;text-align:center}
+  .trust span{color:var(--muted);font-size:.95rem}
+  .trust span b{color:var(--gold)}
+  /* sections */
+  section{padding:60px 0}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 44px}
+  .section-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:800;letter-spacing:-.3px;margin-bottom:14px}
+  .section-head p{color:var(--muted);font-size:1.05rem}
+  /* problem */
+  .problem{background:var(--surface)}
+  .problem .wrap{max-width:760px;text-align:center}
+  .problem p{color:var(--muted);font-size:1.12rem;margin-bottom:16px}
+  .problem strong{color:var(--text)}
+  /* features grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{
+    background:linear-gradient(160deg,var(--surface),var(--surface-2));
+    border:1px solid var(--line);border-radius:18px;padding:28px;
+    transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+  }
+  .card:hover{transform:translateY(-5px);border-color:var(--gold-soft);box-shadow:0 22px 50px rgba(0,0,0,.45)}
+  .card .ic{font-size:1.5rem;color:var(--gold);margin-bottom:14px}
+  .card h3{font-size:1.15rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.98rem}
+  /* steps */
+  .steps{background:var(--surface)}
+  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+  .step{background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:26px;position:relative}
+  .step .num{
+    width:38px;height:38px;border-radius:10px;background:rgba(240,180,41,.12);
+    color:var(--gold);font-weight:800;display:grid;place-items:center;margin-bottom:14px;
+  }
+  .step h3{font-size:1.1rem;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:.96rem}
+  /* who for */
+  .who-list{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;margin:0 auto}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:11px 20px;color:var(--text);font-weight:600;background:var(--surface)}
+  /* offer */
+  .offer{background:radial-gradient(700px 360px at 50% 0%,rgba(240,180,41,.10),transparent 65%)}
+  .offer-box{
+    max-width:620px;margin:0 auto;background:linear-gradient(160deg,var(--surface),var(--surface-2));
+    border:1px solid var(--gold-soft);border-radius:22px;padding:42px 34px;text-align:center;
+    box-shadow:0 26px 70px rgba(0,0,0,.5);
+  }
+  .offer-box .price{font-size:3rem;font-weight:800;color:var(--gold);line-height:1}
+  .offer-box .per{color:var(--muted);font-size:1rem;margin-top:6px}
+  .offer-box ul{list-style:none;text-align:left;margin:26px auto 28px;max-width:430px}
+  .offer-box li{padding:9px 0 9px 30px;position:relative;color:var(--text)}
+  .offer-box li:before{content:"\2713";position:absolute;left:0;color:var(--gold);font-weight:800}
+  .offer-box .small{color:var(--muted);font-size:.9rem;margin-top:16px}
+  /* faq */
+  .faq-item{border:1px solid var(--line);border-radius:14px;background:var(--surface);margin-bottom:12px;padding:20px 22px}
+  .faq-item h3{font-size:1.05rem;margin-bottom:7px;color:var(--text)}
+  .faq-item p{color:var(--muted);font-size:.98rem}
+  /* final */
+  .final{text-align:center;background:var(--surface);border-top:1px solid var(--line)}
+  .final h2{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:16px}
+  .final p{color:var(--muted);font-size:1.1rem;max-width:560px;margin:0 auto 28px}
+  /* footer */
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+  footer a{color:var(--gold);text-decoration:none}
+  @media(max-width:860px){
+    .grid,.steps-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="navwrap">
+    <a class="brand" href="index.html">QuoteSmith</a>
+    <div class="links"><a href="how-to-write-a-quote-for-building-work.html">How to write a quote</a><a href="professional-quote-templates-uk.html">Quote templates UK</a><a href="quotesmith-vs-yourtradebase-vs-powered-now.html">QuoteSmith vs alternatives</a></div>
+    <a class="nav-cta" href="https://quotesmith.co.uk/?utm_source=ghpages&utm_medium=content" target="_blank" rel="noopener">Get QuoteSmith Pro</a>
+  </div>
+</nav>
+
+  
+  <div class="disclosure">QuoteSmith is part of the Hitchens Group. This page links through to quotesmith.co.uk where you can subscribe.</div>
+
+  
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Quoting Software &middot; Built for UK Trades</span>
+      <h1>Win More Work With Quotes That <span class="hl">Look the Part</span></h1>
+      <p class="sub">QuoteSmith turns your job details into a polished, branded PDF quote or proposal in about two minutes. Built for UK builders, plumbers, electricians and every trade that wants to look established and get paid faster.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://quotesmith.co.uk/?utm_source=ghpages&utm_medium=content" target="_blank" rel="noopener">Get QuoteSmith Pro</a>
+        <a class="btn-ghost" href="https://quotesmith.co.uk/?utm_source=ghpages&utm_medium=content#how-it-works" target="_blank" rel="noopener">See How It Works</a>
+      </div>
+      <p class="price-line"><strong>GBP 19.99 per month</strong> &middot; Cancel anytime</p>
+    </div>
+  </header>
+
+  
+  <div class="trust">
+    <div class="wrap">
+      <span><b>Branded</b> professional PDFs</span>
+      <span>Ready in about <b>two minutes</b></span>
+      <span>Works on <b>phone, tablet &amp; laptop</b></span>
+      <span>Built for <b>UK trades</b></span>
+    </div>
+  </div>
+
+  
+  <section class="problem">
+    <div class="wrap">
+      <p>A scrappy quote scribbled on a notepad costs you jobs. When a customer is comparing three quotes, they pick the one that <strong>looks like it came from a proper firm.</strong></p>
+      <p>QuoteSmith helps you send clear, branded, professional proposals that make customers trust you and say yes. Enter the work, the materials and the price, and you get a clean PDF ready to send, straight from the van.</p>
+    </div>
+  </section>
+
+  
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Everything You Need to Quote Like a Pro</h2>
+        <p>No spreadsheets to wrestle with. No design skills needed. Just quotes that win you more work.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="ic">&#9733;</div>
+          <h3>Professional PDF Quotes</h3>
+          <p>Turn job details into a clean, branded PDF quote your customers take seriously. No more handwritten scraps or fiddly spreadsheets.</p>
+        </div>
+        <div class="card">
+          <div class="ic">&#9889;</div>
+          <h3>Done in About Two Minutes</h3>
+          <p>Enter the work, the materials and the price. QuoteSmith handles the layout, the itemised lines and the totals for you.</p>
+        </div>
+        <div class="card">
+          <div class="ic">&#128241;</div>
+          <h3>Quote From the Van</h3>
+          <p>Works on your phone, tablet or laptop, so you can quote on site while the customer is still keen, not three days later.</p>
+        </div>
+        <div class="card">
+          <div class="ic">&#127919;</div>
+          <h3>Built for UK Trades</h3>
+          <p>Made for builders, plumbers, electricians, plasterers and painters, with your logo and details on every quote.</p>
+        </div>
+        <div class="card">
+          <div class="ic">&#128221;</div>
+          <h3>Itemised &amp; Clear</h3>
+          <p>Break the job into plain, itemised lines so customers see exactly what they are paying for and feel it is fair.</p>
+        </div>
+        <div class="card">
+          <div class="ic">&#128260;</div>
+          <h3>Faster Every Time</h3>
+          <p>Reusable details mean every quote after the first one is even quicker to send.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How It Works</h2>
+        <p>Three steps from job details to a quote that wins the work.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Enter the job</h3>
+          <p>Type in the work, the materials and the price while you are still on site.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Get your branded PDF</h3>
+          <p>QuoteSmith builds a clean, professional quote with your logo in about two minutes.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Send and win the job</h3>
+          <p>Send it the same day, while the customer is keen, and look the part against every other quote.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:34px">
+        <a class="btn" href="https://quotesmith.co.uk/?utm_source=ghpages&utm_medium=content" target="_blank" rel="noopener">Get QuoteSmith Pro</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built for Every Trade That Wants to Look Established</h2>
+        <p>If you send quotes, QuoteSmith is for you.</p>
+      </div>
+      <div class="who-list">
+        <span class="pill">Builders</span>
+        <span class="pill">Plumbers</span>
+        <span class="pill">Electricians</span>
+        <span class="pill">Plasterers</span>
+        <span class="pill">Painters &amp; Decorators</span>
+        <span class="pill">Roofers</span>
+        <span class="pill">Gas Engineers</span>
+        <span class="pill">Landscapers</span>
+        <span class="pill">Carpenters</span>
+        <span class="pill">Tilers</span>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="offer">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>One Simple Price</h2>
+        <p>No tiers to puzzle over. Everything QuoteSmith does, for one clear monthly price.</p>
+      </div>
+      <div class="offer-box">
+        <div class="price">GBP 19.99</div>
+        <div class="per">per month &middot; cancel anytime</div>
+        <ul>
+          <li>Branded professional PDF quotes and proposals</li>
+          <li>Quotes built in about two minutes</li>
+          <li>Works on phone, tablet and laptop</li>
+          <li>Itemised materials and pricing handled for you</li>
+          <li>Reusable details so every quote gets faster</li>
+          <li>Cancel anytime, no lock-in contract</li>
+        </ul>
+        <a class="btn" href="https://quotesmith.co.uk/?utm_source=ghpages&utm_medium=content" target="_blank" rel="noopener">Get QuoteSmith Pro</a>
+        <p class="small">Every quote you send late or scribbled is a job you risk handing to whoever looked more professional. Send the next one properly.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section>
+    <div class="wrap" style="max-width:760px">
+      <div class="section-head">
+        <h2>Questions, Answered</h2>
+      </div>
+      <div class="faq-item">
+        <h3>How much does QuoteSmith cost?</h3>
+        <p>GBP 19.99 per month, with no lock-in contract. You can cancel anytime.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does it take to make a quote?</h3>
+        <p>About two minutes. You enter the work, the materials and the price, and QuoteSmith builds the branded PDF for you.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I use it on my phone on site?</h3>
+        <p>Yes. QuoteSmith works on phone, tablet and laptop, so you can quote from the van while the customer is still keen.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need any design skills?</h3>
+        <p>None at all. QuoteSmith handles the layout, the itemised lines and the totals. You just enter the job details.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which trades is it for?</h3>
+        <p>Every UK trade that sends quotes: builders, plumbers, electricians, plasterers, painters, roofers, gas engineers and more.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="final">
+    <div class="wrap">
+      <h2>Send Quotes That Win the Work</h2>
+      <p>Stop losing jobs to scrappy quotes and slow follow-ups. Look the part on every proposal, straight from the van.</p>
+      <a class="btn" href="https://quotesmith.co.uk/?utm_source=ghpages&utm_medium=content" target="_blank" rel="noopener">Get QuoteSmith Pro</a>
+      <p class="price-line" style="margin-top:18px"><strong>GBP 19.99 per month</strong> &middot; Cancel anytime</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>QuoteSmith &middot; AI Quote &amp; Proposal Generator for UK Tradespeople</p>
+    <p style="margin-top:6px">&copy; 2026 QuoteSmith. Part of the Hitchens Group. &middot; <a href="https://quotesmith.co.uk/?utm_source=ghpages&utm_medium=content" target="_blank" rel="noopener">quotesmith.co.uk</a></p>
+  </footer>
+
+</body>
+</html>
